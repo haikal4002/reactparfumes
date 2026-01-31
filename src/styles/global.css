@@ -221,6 +221,24 @@ h1 {
   color: var(--muted);
 }
 
+/* Notice box for warnings */
+.notice {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+.notice.warning {
+  background: #fff4ef;
+  border: 1px solid rgba(160, 115, 80, 0.12);
+  color: var(--brown-800);
+}
+.notice code {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
 /* Error boundary styles */
 .error-boundary {
   background: linear-gradient(180deg, rgba(255, 250, 247, 0.6), #fff);

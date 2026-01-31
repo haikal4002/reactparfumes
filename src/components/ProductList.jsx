@@ -8,6 +8,11 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Detect missing Contentful credentials injected at build time
+  const missingCreds =
+    !import.meta.env.VITE_CONTENTFUL_SPACE ||
+    !import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN;
+
   useEffect(() => {
     let mounted = true;
     setLoading(true);
@@ -38,6 +43,20 @@ export default function ProductList() {
     return (
       <section className="container">Gagal memuat produk: {error}</section>
     );
+
+  // Show a visible notice if credentials were not set at build time (helps diagnose deployment)
+  if (missingCreds) {
+    return (
+      <section id="products" className="container product-list">
+        <div className="notice warning">
+          <strong>Produk tidak tersedia.</strong> Contentful belum dikonfigurasi
+          pada saat build. Pastikan variabel <code>VITE_CONTENTFUL_SPACE</code>{" "}
+          dan <code>VITE_CONTENTFUL_ACCESS_TOKEN</code> diset di environment
+          build (bukan hanya runtime). Lihat README untuk petunjuk.
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="products" className="container product-list">
