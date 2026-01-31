@@ -1,0 +1,13 @@
+/* Flat brown palette */
+:root {
+  --brown-900: #3b2f2f;
+  --brown-800: #5a453f;
+  --brown-700: #7b584a;
+  --brown-600: #9a6f57;
+  --brown-500: #c08b66;
+  --brown-400: #d9a67f;
+  --accent: var(--brown-500);
+  --muted: #6b6b6b;
+  --bg: #fffaf7;
+  --max-width: 1100px;
+}
