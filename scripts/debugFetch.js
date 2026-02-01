@@ -1,7 +1,7 @@
 const { createClient } = require('contentful')
 
-const SPACE = 'e0x7i0aawesw'
-const TOKEN = 'c9L2q9gUQw_UdmyIfybApTUbDvgmfNvXcq73QIN2_2w'
+const SPACE = ''
+const TOKEN = ''
 
 const client = createClient({ space: SPACE, accessToken: TOKEN })
 
